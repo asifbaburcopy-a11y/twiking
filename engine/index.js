@@ -7,7 +7,6 @@ const { spawn } = require('child_process');
 
 const mods = require('./mods');
 const journal = require('./journal');
-const runner = require('./runner');
 const detect = require('./detect');
 const appsCatalog = require('./apps');
 const desktop = require('./desktop');
