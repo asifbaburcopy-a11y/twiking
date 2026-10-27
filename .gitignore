@@ -1,0 +1,18 @@
+node_modules/
+dist/
+out/
+*.AppImage
+
+# Twiking runtime state — never publish a journal, backups, or desktop state
+state.json
+*.twstate.json
+backups/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
