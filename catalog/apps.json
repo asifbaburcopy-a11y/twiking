@@ -1,0 +1,419 @@
+{
+  "$comment": "Customization-only application catalog. Every app must have purpose='customization' and categories drawn from allowedCategories; apps.js rejects anything else. 'projects' are the owner's own apps, listed for convenience and exempt from that rule (they are labelled as such in the UI). Install commands are shown and run only after the user asks.",
+  "allowedCategories": [
+    "Themes",
+    "Icons & Cursors",
+    "Fonts",
+    "Wallpaper",
+    "Panels & Docks",
+    "Effects",
+    "Desktop",
+    "Shell Extensions",
+    "Qt & GTK"
+  ],
+  "apps": [
+    {
+      "id": "gnome-tweaks",
+      "name": "GNOME Tweaks",
+      "purpose": "customization",
+      "categories": ["Desktop", "Themes"],
+      "description": "The official knob panel for GNOME: titlebar buttons, fonts, startup apps, top bar, workspaces and extension switches.",
+      "command": "gnome-tweaks",
+      "package": "gnome-tweaks",
+      "website": "https://gitlab.gnome.org/GNOME/gnome-tweaks",
+      "note": "Everything it changes is a gsettings key, so Twiking mods coexist — a value set here after a mod was enabled wins until you re-apply the mod."
+    },
+    {
+      "id": "zorin-appearance",
+      "name": "Zorin Appearance",
+      "purpose": "customization",
+      "categories": ["Themes", "Desktop"],
+      "description": "Zorin's own layout and colour switcher: desktop layouts, accent colours, theme variants and taskbar behaviour.",
+      "command": "zorin-appearance",
+      "package": "zorin-appearance",
+      "website": "https://zorin.com/os/",
+      "note": "Switching layout here rewrites several of the same gsettings keys the Window Buttons, Dock & Panel and Workspaces mods use."
+    },
+    {
+      "id": "extension-manager",
+      "name": "Extension Manager",
+      "purpose": "customization",
+      "categories": ["Shell Extensions", "Desktop"],
+      "description": "Browse, install and update GNOME Shell extensions — the biggest source of shell-level customisation on GNOME.",
+      "command": "extension-manager",
+      "alternateCommands": ["gnome-extensions-app"],
+      "package": "gnome-shell-extension-manager",
+      "flatpak": "com.mattjakeman.ExtensionManager",
+      "website": "https://github.com/mjakeman/extension-manager",
+      "note": "Extensions run inside gnome-shell. A broken one can blank the shell; keep a terminal or TTY handy the first time you install one."
+    },
+    {
+      "id": "dconf-editor",
+      "name": "dconf Editor",
+      "purpose": "customization",
+      "categories": ["Desktop"],
+      "description": "Raw browser for every GSettings key on the system, with descriptions — the source of truth behind every Twiking settings mod.",
+      "command": "dconf-editor",
+      "package": "dconf-editor",
+      "website": "https://apps.gnome.org/DconfEditor/",
+      "note": "No undo and no explanation of consequences. Great for exploring, risky for changing."
+    },
+    {
+      "id": "gnome-shell-extensions",
+      "name": "GNOME Shell Extensions (pack)",
+      "purpose": "customization",
+      "categories": ["Shell Extensions"],
+      "description": "The classic official extension set: app menu, window list, workspace indicator, auto-move windows, places menu and more.",
+      "package": "gnome-shell-extensions",
+      "website": "https://gitlab.gnome.org/GNOME/gnome-shell-extensions",
+      "note": "Installing adds the extension files; enable them individually in Extensions or Extension Manager."
+    },
+    {
+      "id": "appindicator",
+      "name": "AppIndicator Support",
+      "purpose": "customization",
+      "categories": ["Shell Extensions"],
+      "description": "Brings legacy tray icons into the GNOME top bar — needed by Discord, Steam, Dropbox and many others.",
+      "package": "gnome-shell-extension-appindicator",
+      "website": "https://github.com/ubuntu/gnome-shell-extension-appindicator",
+      "note": "Log out and back in after installing so the shell picks it up."
+    },
+    {
+      "id": "ubuntu-dock",
+      "name": "Ubuntu Dock (Dash to Dock)",
+      "purpose": "customization",
+      "categories": ["Panels & Docks", "Shell Extensions"],
+      "description": "The configurable application dock behind Ubuntu's launcher: position, size, autohide and click behaviour.",
+      "package": "gnome-shell-extension-ubuntu-dock",
+      "website": "https://github.com/micheleg/dash-to-dock",
+      "note": "On Zorin this overlaps with the built-in taskbar; enable one dock, not both."
+    },
+    {
+      "id": "kvantum",
+      "name": "Kvantum",
+      "purpose": "customization",
+      "categories": ["Qt & GTK", "Themes"],
+      "description": "SVG-based Qt theme engine with a large style library; makes Qt apps match a GTK desktop.",
+      "command": "kvantummanager",
+      "package": "qt5-style-kvantum",
+      "website": "https://github.com/tsujan/Kvantum",
+      "note": "Requires QT_STYLE_OVERRIDE=kvantum — the Qt App Styling mod does that for you."
+    },
+    {
+      "id": "qt6ct",
+      "name": "Qt6 Configuration Tool",
+      "purpose": "customization",
+      "categories": ["Qt & GTK"],
+      "description": "Configures fonts, icons, palette and style for Qt 6 applications.",
+      "command": "qt6ct",
+      "package": "qt6ct",
+      "website": "https://github.com/trialuser02/qt6ct",
+      "note": "Sets QT_QPA_PLATFORMTHEME=qt6ct via the Qt App Styling mod."
+    },
+    {
+      "id": "adwaita-qt",
+      "name": "Adwaita for Qt",
+      "purpose": "customization",
+      "categories": ["Qt & GTK", "Themes"],
+      "description": "Adwaita look-alike style for Qt 5 applications, so they stop looking out of place next to GTK apps.",
+      "package": "adwaita-qt",
+      "website": "https://github.com/FedoraQt/adwaita-qt",
+      "note": "Pair with the Qt App Styling mod set to the GTK3 bridge."
+    },
+    {
+      "id": "gradience",
+      "name": "Gradience",
+      "purpose": "customization",
+      "categories": ["Themes"],
+      "description": "Generates complete libadwaita colour schemes from a few colours, including shell theming.",
+      "command": "gradience",
+      "package": "",
+      "flatpak": "com.github.GradienceTeam.Gradience",
+      "website": "https://github.com/GradienceTeam/Gradience",
+      "note": "Writes user CSS and theme colours; enable either this or Twiking's GTK CSS mods, not both."
+    },
+    {
+      "id": "papirus-icon-theme",
+      "name": "Papirus Icons",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "The most popular icon theme family on Linux, with colour variants for folders and a matching cursor set.",
+      "package": "papirus-icon-theme",
+      "website": "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
+      "note": "Pure data — installing adds no process and no risk."
+    },
+    {
+      "id": "numix-icon-theme-circle",
+      "name": "Numix Circle Icons",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "Flat, circular icon theme that covers a very large number of applications.",
+      "package": "numix-icon-theme-circle",
+      "website": "https://github.com/numixproject/numix-icon-theme-circle",
+      "note": "Switch to it with the Icon Theme mod."
+    },
+    {
+      "id": "elementary-icon-theme",
+      "name": "elementary Icons",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "Clean, rounded icon set from elementary OS — a gentle alternative to Papirus.",
+      "package": "elementary-icon-theme",
+      "website": "https://github.com/elementary/icons",
+      "note": "Includes cursor themes as well."
+    },
+    {
+      "id": "humanity-icon-theme",
+      "name": "Humanity Icons",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "The classic Ubuntu icon set, still useful for older apps that need full coverage.",
+      "package": "humanity-icon-theme",
+      "website": "https://launchpad.net/humanity",
+      "note": "Best paired with the Yaru or Arc GTK themes."
+    },
+    {
+      "id": "yaru-theme-icon",
+      "name": "Yaru Icons",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "Ubuntu's modern icon theme, with light, dark and accent-coloured folder variants.",
+      "package": "yaru-theme-icon",
+      "website": "https://github.com/ubuntu/yaru",
+      "note": "Yaru GTK and Yaru icons are separate packages; install both for a consistent look."
+    },
+    {
+      "id": "yaru-theme-gtk",
+      "name": "Yaru GTK Theme",
+      "purpose": "customization",
+      "categories": ["Themes"],
+      "description": "Ubuntu's GTK theme — warm greys, an orange accent and a matching dark variant.",
+      "package": "yaru-theme-gtk",
+      "website": "https://github.com/ubuntu/yaru",
+      "note": "Pick it in the GTK Theme mod after installing."
+    },
+    {
+      "id": "arc-theme",
+      "name": "Arc Theme",
+      "purpose": "customization",
+      "categories": ["Themes"],
+      "description": "The long-running flat theme with transparent elements; still one of the most downloaded GTK themes.",
+      "package": "arc-theme",
+      "website": "https://github.com/horst3180/arc-theme",
+      "note": "Includes GNOME Shell and GTK2/3/4 variants."
+    },
+    {
+      "id": "numix-gtk-theme",
+      "name": "Numix GTK Theme",
+      "purpose": "customization",
+      "categories": ["Themes"],
+      "description": "Flat, colourful GTK theme designed to pair with the Numix icon set.",
+      "package": "numix-gtk-theme",
+      "website": "https://github.com/numixproject/numix-gtk-theme",
+      "note": "GTK3 era; modern libadwaita apps will only partly follow it."
+    },
+    {
+      "id": "breeze-cursor-theme",
+      "name": "Breeze Cursors",
+      "purpose": "customization",
+      "categories": ["Icons & Cursors"],
+      "description": "KDE's crisp, high-contrast cursor set — widely considered the easiest to track on screen.",
+      "package": "breeze-cursor-theme",
+      "website": "https://invent.kde.org/plasma/breeze",
+      "note": "Switch to it with the Cursor Theme mod."
+    },
+    {
+      "id": "fonts-inter",
+      "name": "Inter Font",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "The screen-first sans-serif GNOME and Zorin already lean on; install it everywhere it is missing.",
+      "package": "fonts-inter",
+      "website": "https://rsms.me/inter/",
+      "note": "Pick it in the System Fonts mod."
+    },
+    {
+      "id": "fonts-jetbrains-mono",
+      "name": "JetBrains Mono",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "A coding font with tall x-height and clear punctuation — comfortable for terminals.",
+      "package": "fonts-jetbrains-mono",
+      "website": "https://www.jetbrains.com/lp/mono/",
+      "note": "Set it as the monospace font in System Fonts."
+    },
+    {
+      "id": "fonts-firacode",
+      "name": "Fira Code",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "Monospace font with programming ligatures (=>, !=, >=) for terminals and editors.",
+      "package": "fonts-firacode",
+      "website": "https://github.com/tonsky/FiraCode",
+      "note": "Ligatures only appear in apps that opt in, such as most code editors."
+    },
+    {
+      "id": "fonts-cantarell",
+      "name": "Cantarell Font",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "GNOME's own UI typeface — the safest choice for a consistent GNOME look.",
+      "package": "fonts-cantarell",
+      "website": "https://gitlab.gnome.org/GNOME/cantarell-fonts",
+      "note": "Already present on most GNOME installs; this guarantees the latest cut."
+    },
+    {
+      "id": "fonts-noto-color-emoji",
+      "name": "Noto Color Emoji",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "Full-colour emoji font so chat, browsers and terminals stop showing empty boxes.",
+      "package": "fonts-noto-color-emoji",
+      "website": "https://fonts.google.com/noto/specimen/Noto+Color+Emoji",
+      "note": "Some apps cache their emoji font until restarted."
+    },
+    {
+      "id": "font-manager",
+      "name": "Font Manager",
+      "purpose": "customization",
+      "categories": ["Fonts"],
+      "description": "Preview, install and compare fonts, and see exactly how a family renders at different sizes.",
+      "command": "font-manager",
+      "package": "font-manager",
+      "website": "https://fontmanager.github.io/",
+      "note": "Installed fonts appear in the System Fonts mod after a rescan."
+    },
+    {
+      "id": "gnome-backgrounds",
+      "name": "GNOME Backgrounds",
+      "purpose": "customization",
+      "categories": ["Wallpaper"],
+      "description": "The official GNOME wallpaper collection, including the light/dark companion pairs.",
+      "package": "gnome-backgrounds",
+      "website": "https://gitlab.gnome.org/GNOME/gnome-backgrounds",
+      "note": "Pairs well with the Wallpaper mod's light/dark image options."
+    },
+    {
+      "id": "ubuntu-wallpapers",
+      "name": "Ubuntu Wallpapers",
+      "purpose": "customization",
+      "categories": ["Wallpaper"],
+      "description": "Every Ubuntu release wallpaper plus the mascot artwork, installed system-wide.",
+      "package": "ubuntu-wallpapers",
+      "website": "https://launchpad.net/ubuntu-wallpapers",
+      "note": "A few hundred MB of images; remove with apt if you change your mind."
+    },
+    {
+      "id": "variety",
+      "name": "Variety",
+      "purpose": "customization",
+      "categories": ["Wallpaper"],
+      "description": "Rotates wallpapers from local folders or online sources on a schedule, with quotes and effects.",
+      "command": "variety",
+      "package": "variety",
+      "website": "https://github.com/varietywalls/variety",
+      "note": "Runs a background daemon; stop it from its own tray menu."
+    },
+    {
+      "id": "nitrogen",
+      "name": "Nitrogen",
+      "purpose": "customization",
+      "categories": ["Wallpaper"],
+      "description": "Fast wallpaper setter for lightweight desktops and multi-monitor setups.",
+      "command": "nitrogen",
+      "package": "nitrogen",
+      "website": "https://github.com/l3ib/nitrogen",
+      "note": "Only needed on desktops that don't manage their own wallpaper."
+    },
+    {
+      "id": "plank",
+      "name": "Plank",
+      "purpose": "customization",
+      "categories": ["Panels & Docks"],
+      "description": "Minimal, themeable application dock for any desktop.",
+      "command": "plank",
+      "package": "plank",
+      "website": "https://github.com/ricotz/plank",
+      "note": "Adds a dock without touching GNOME's own layout."
+    },
+    {
+      "id": "cairo-dock",
+      "name": "Cairo-Dock",
+      "purpose": "customization",
+      "categories": ["Panels & Docks", "Effects"],
+      "description": "Heavily animated dock with 3D effects, applets and themes — the opposite of minimal.",
+      "command": "cairo-dock",
+      "package": "cairo-dock",
+      "website": "https://github.com/Cairo-Dock/cairo-dock-core",
+      "note": "Best on X11; under Wayland some effects are unavailable."
+    },
+    {
+      "id": "latte-dock",
+      "name": "Latte Dock",
+      "purpose": "customization",
+      "categories": ["Panels & Docks"],
+      "description": "KDE's flexible dock and panel system, with parabolic zoom and per-activity layouts.",
+      "command": "latte-dock",
+      "package": "latte-dock",
+      "website": "https://github.com/KDE/latte-dock",
+      "note": "Aimed at Plasma; on GNOME it can only run as a standalone dock."
+    },
+    {
+      "id": "picom",
+      "name": "Picom Compositor",
+      "purpose": "customization",
+      "categories": ["Effects"],
+      "description": "Standalone compositor offering shadows, blur, fading and transparency for X11 desktops.",
+      "command": "picom",
+      "package": "picom",
+      "website": "https://github.com/yshui/picom",
+      "note": "X11 only — it has no effect under a Wayland session like this one."
+    },
+    {
+      "id": "conky",
+      "name": "Conky",
+      "purpose": "customization",
+      "categories": ["Panels & Docks", "Effects"],
+      "description": "Classic always-on desktop widget system: CPU, memory, weather, media, anything scriptable.",
+      "command": "conky",
+      "package": "conky-all",
+      "website": "https://github.com/brndnmtthws/conky",
+      "note": "Conky configs are plain text in ~/.config/conky; a bad one is fixed by editing the file."
+    },
+    {
+      "id": "lxappearance",
+      "name": "LXAppearance",
+      "purpose": "customization",
+      "categories": ["Themes", "Icons & Cursors"],
+      "description": "Lightweight GTK theme, icon and cursor switcher that works outside GNOME too.",
+      "command": "lxappearance",
+      "package": "lxappearance",
+      "website": "https://github.com/lxde/lxappearance",
+      "note": "Writes GTK settings.ini; GNOME ignores parts of that, so prefer Zorin Appearance here."
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-file-explorer",
+      "kind": "project",
+      "name": "Windows 11 File Explorer for Linux",
+      "description": "Pixel-faithful Electron recreation of File Explorer: tabs, Fluent design, Quick access, This PC, Recycle Bin, .deb packaging.",
+      "repo": "https://github.com/asifbaburcopy-a11y/windows-11-file-explorer-linux",
+      "command": "winexplorer",
+      "desktopId": "winexplorer",
+      "categories": ["Your projects"],
+      "note": "Your project — listed for quick access. Not part of the customization-only catalogue."
+    },
+    {
+      "id": "project-task-manager",
+      "kind": "project",
+      "name": "Windows 11 Task Manager for Linux",
+      "description": "Task Manager clone reading live data from /proc: processes, CPU/memory/disk/network graphs, services, startup apps.",
+      "repo": "https://github.com/asifbaburcopy-a11y/windows-11-task-manager-linux",
+      "command": "",
+      "desktopId": "task-manager",
+      "categories": ["Your projects"],
+      "note": "Your project — listed for quick access. Launching uses its installed .desktop entry; the source is on GitHub."
+    }
+  ]
+}
